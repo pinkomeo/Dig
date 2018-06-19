@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+
+    "name": "Dig",
+    "description": "This extension allows the user to find things they want in the source code.",
+    "version": "1.0",
+    "background":
+    {
+        // 2种指定方式，如果指定JS，那么会自动生成一个背景页
+        // "page": "background.html",
+        "scripts": ["js/background.js"]
+    },
+    "browser_action":
+    {
+        "default_icon":
+        {
+            "19": "images/icon19.png",
+            "38": "images/icon38.png",
+            "128": "images/icon128.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "Click here!"
+    },
+    "permissions": [
+        "*://*/*/*",
+        "webNavigation",
+        "tabs",
+        "activeTab",
+        "storage"
+    ]
+    // ,
+    // "content_scripts": [
+    // {
+    //     "matches": ["<all_urls>"],
+    //     "js": ["js/jquery.js","js/myscript.js" ],
+    //     "run_at": "document_end",
+    //     "all_frames": false
+    // }]
+}
